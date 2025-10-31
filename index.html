@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Relógio • Cronômetro • Temporizador</title>
+<link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="card" role="application" aria-label="Relógio, cronômetro e temporizador">
+      <aside class="sidebar">
+        <h3 style="margin-bottom:12px;">Modos</h3>
+        <div class="modes" role="tablist" aria-label="Modos">
+          <button class="mode-btn active" data-mode="clock" role="tab" aria-selected="true">🕒 Relógio</button>
+          <button class="mode-btn" data-mode="stopwatch" role="tab" aria-selected="false">⏱️ Cronômetro</button>
+          <button class="mode-btn" data-mode="timer" role="tab" aria-selected="false">⏲️ Temporizador</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <!-- DISPLAY -->
+        <section class="display" aria-live="polite">
+          <div id="label" class="sub">Relógio Digital</div>
+          <div id="time" class="time" aria-atomic="true">00:00:00</div>
+          <div id="extra" class="sub">Data: --/--/----</div>
+        </section>
+
+        <!-- CONTROLES / SEÇÕES -->
+        <section id="clockSection" class="section">
+          <div class="controls" style="margin-bottom:8px;">
+            <button id="toggleTheme" class="btn ghost">Tema</button>
+          </div>
+          <p style="text-align:center; color:#6b7280;">Relógio sincronizado com o horário do sistema (atualiza a cada segundo).</p>
+        </section>
+
+        <section id="stopwatchSection" class="section" hidden>
+          <div class="controls">
+            <button id="swStart" class="btn">Start</button>
+            <button id="swStop" class="btn ghost" disabled>Stop</button>
+            <button id="swLap" class="btn ghost" disabled>Lap</button>
+            <button id="swReset" class="btn ghost" disabled>Reset</button>
+          </div>
+          <div class="laps" id="laps"></div>
+        </section>
+
+        <section id="timerSection" class="section" hidden>
+          <div style="display:flex; justify-content:center; gap:12px; align-items:center; margin-bottom:8px;">
+            <div class="timer-inputs" role="group" aria-label="Definir temporizador">
+              <input type="number" id="tHours" min="0" max="99" placeholder="hh" aria-label="Horas">
+              <input type="number" id="tMinutes" min="0" max="59" placeholder="mm" aria-label="Minutos">
+              <input type="number" id="tSeconds" min="0" max="59" placeholder="ss" aria-label="Segundos">
+            </div>
+          </div>
+          <div class="controls">
+            <button id="tStart" class="btn">Start</button>
+            <button id="tPause" class="btn ghost" disabled>Pause</button>
+            <button id="tReset" class="btn ghost" disabled>Reset</button>
+          </div>
+          <div style="margin-top:10px; text-align:center; color:#6b7280;">Quando o temporizador terminar, será reproduzido um som curto.</div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+<script src="./JS/script.js"></script>
+</body>
+</html>
