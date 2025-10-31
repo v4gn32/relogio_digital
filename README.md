@@ -51,8 +51,8 @@ O objetivo é demonstrar manipulação de tempo, DOM e animações com `requestA
 
 ### Estrutura do Projeto
 
-- relogio-cronometro-temporizador
-├── index.html # Página principal com todo o código
+- relogio-cronometro-temporizador <br>
+├── index.html # Página principal com todo o código <br>
 └── README.md # Documentação do projeto
 
 
